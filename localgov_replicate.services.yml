@@ -1,0 +1,4 @@
+services:
+  localgov_replicate.access.replicate_node:
+    class: Drupal\localgov_replicate\Access\ReplicateNodeAccessCheck
+    arguments: ['@config.factory']

@@ -1,0 +1,6 @@
+localgov_replicate.settings:
+  title: 'LocalGov Replicate Settings'
+  description: 'Configure settings for the LocalGov Replicate module.'
+  parent: system.admin_config_content
+  route_name: localgov_replicate.settings_form
+  weight: 100

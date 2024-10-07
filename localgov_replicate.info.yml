@@ -1,0 +1,7 @@
+name: 'LocalGov Replicate'
+type: module
+description: 'Allows editors to clone/replicate existing content.'
+package: LocalGov Drupal
+core_version_requirement: ^10 || ^11
+dependencies:
+  - replicate:replicate

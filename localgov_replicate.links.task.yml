@@ -1,0 +1,5 @@
+localgov_replicate.replicate_node:
+  route_name: localgov_replicate.replicate_node
+  title: 'Replicate'
+  base_route: entity.node.canonical
+  weight: 100
