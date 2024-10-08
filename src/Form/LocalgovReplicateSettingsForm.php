@@ -31,7 +31,7 @@ class LocalgovReplicateSettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('localgov_replicate.settings');
 
-    // Retrieve all node types.
+    // Fetch all available node types.
     $node_types = NodeType::loadMultiple();
     $options = [];
     foreach ($node_types as $node_type) {
@@ -40,10 +40,9 @@ class LocalgovReplicateSettingsForm extends ConfigFormBase {
 
     $form['node_types'] = [
       '#type' => 'checkboxes',
-      '#title' => $this->t('Content Types'),
-      '#description' => $this->t('Select the content types to enable replication for.'),
+      '#title' => $this->t('Content types'),
       '#options' => $options,
-      '#default_value' => $config->get('node_types') ?: [],
+      '#default_value' => array_combine($config->get('node_types') ?: [], $config->get('node_types') ?: []),
     ];
 
     return parent::buildForm($form, $form_state);
@@ -53,11 +52,15 @@ class LocalgovReplicateSettingsForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->config('localgov_replicate.settings')
-      ->set('node_types', array_filter($form_state->getValue('node_types')))
-      ->save();
-
     parent::submitForm($form, $form_state);
+
+    // Get the values from the form state.
+    $node_types = array_keys(array_filter($form_state->getValue('node_types')));
+
+    // Save the processed values to the configuration.
+    $this->config('localgov_replicate.settings')
+      ->set('node_types', $node_types)
+      ->save();
   }
 
 }
