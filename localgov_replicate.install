@@ -4,3 +4,22 @@
  * @file
  * Install, update and uninstall functions for the LocalGov Replicate module.
  */
+
+/**
+ * Implements hook_install().
+ */
+function localgov_replicate_install() {
+  $entities_to_enable_replicate_for = [
+    'node',
+  ];
+
+  // Enable replicate for the specified entities.
+  \Drupal::service('config.factory')->getEditable('replicate_ui.settings')
+    ->set('entity_types', $entities_to_enable_replicate_for)
+    ->save();
+
+  // Rebuild the cache to apply the new configuration.
+  // This is necessary, or else we can sometimes get an error about no
+  // replicate form class being chosen.
+  drupal_flush_all_caches();
+}

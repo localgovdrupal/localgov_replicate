@@ -5,3 +5,4 @@ package: LocalGov Drupal
 core_version_requirement: ^10 || ^11
 dependencies:
   - replicate:replicate
+  - replicate_ui:replicate_ui

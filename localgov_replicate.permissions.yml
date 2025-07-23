@@ -1,4 +1,0 @@
-replicate nodes:
-  title: 'Replicate nodes'
-  description: 'Allows users to replicate (clone) nodes.'
-  restrict access: TRUE
