@@ -1,16 +1,11 @@
 ## INTRODUCTION
 
-The LocalGov Replicate module is a DESCRIBE_THE_MODULE_HERE.
-
-The primary use case for this module is:
-
-- Use case #1
-- Use case #2
-- Use case #3
+The LocalGov Replicate module adds the ability to be able to replicate/clone content on your LocalGov Drupal website.
 
 ## REQUIREMENTS
 
-DESCRIBE_MODULE_DEPENDENCIES_HERE
+- Replicate
+- Replicate UI
 
 ## INSTALLATION
 
@@ -18,13 +13,11 @@ Install as you would normally install a contributed Drupal module.
 See: https://www.drupal.org/node/895232 for further information.
 
 ## CONFIGURATION
-- Configuration step #1
-- Configuration step #2
-- Configuration step #3
+- By default this will set all content types to be replicatable.
+- It also sets a permission so that only users with the 'LocalGov Editor' role can use the replicate feature. You can visit the permissions page to allow other roles to use this functionality.
 
 ## MAINTAINERS
 
 Current maintainers for Drupal 10:
 
-- FIRST_NAME LAST_NAME (NICKNAME) - https://www.drupal.org/u/NICKNAME
-
+- Mark Conroy (markconroy) - https://www.drupal.org/u/markconroy
