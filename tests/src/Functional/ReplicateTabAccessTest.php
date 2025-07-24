@@ -171,8 +171,8 @@ class ReplicateTabAccessTest extends BrowserTestBase {
    * Test that anonymous users do not have access to the clone tab.
    */
   public function testAnonymousUserDoesNotHaveCloneTabAccess(): void {
-    // Make sure we're not logged in.
-    $this->drupalLogout();
+    // Ensure we are anonymous by resetting the session.
+    $this->resetSession();
 
     // Navigate to the test node.
     $this->drupalGet($this->testNode->toUrl());
