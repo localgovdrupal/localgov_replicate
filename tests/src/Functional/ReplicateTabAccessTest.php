@@ -159,7 +159,7 @@ class ReplicateTabAccessTest extends BrowserTestBase {
     // Check that the page loads successfully.
     $this->assertSession()->statusCodeEquals(200);
 
-    // Check that the "Clone" tab is NOT present for authenticated users without editor role.
+    // Check that the "Clone" tab is NOT present.
     $this->assertSession()->linkNotExists('Clone');
 
     // Verify that direct access to the replicate page is denied.
@@ -206,7 +206,7 @@ class ReplicateTabAccessTest extends BrowserTestBase {
     $this->drupalGet($node_by_authenticated_user->toUrl());
     $this->assertSession()->statusCodeEquals(200);
 
-    // Editor should still have Clone tab access even for content they don't own.
+    // Editor should have Clone tab access even for content they don't own.
     $this->assertSession()->linkExists('Clone');
 
     // Test authenticated user access to content they own.
@@ -214,7 +214,7 @@ class ReplicateTabAccessTest extends BrowserTestBase {
     $this->drupalGet($node_by_authenticated_user->toUrl());
     $this->assertSession()->statusCodeEquals(200);
 
-    // Authenticated user should NOT have Clone tab access even for their own content.
+    // Authenticated user should NOT have Clone tab access.
     $this->assertSession()->linkNotExists('Clone');
   }
 
