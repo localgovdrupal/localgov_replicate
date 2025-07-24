@@ -8,7 +8,7 @@
 /**
  * Implements hook_install().
  */
-function localgov_replicate_install() {
+function localgov_replicate_install(): void {
   $entities_to_enable_replicate_for = [
     'node',
   ];
