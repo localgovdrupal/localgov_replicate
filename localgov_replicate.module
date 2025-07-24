@@ -19,3 +19,12 @@ function localgov_replicate_localgov_roles_default(): array {
 
   return $perms;
 }
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function localgov_replicate_menu_local_tasks_alter(&$data, $route_name) {
+  if ($route_name === 'entity.node.canonical') {
+    $data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']['#link']['title'] = t('Clone');
+  }
+}
