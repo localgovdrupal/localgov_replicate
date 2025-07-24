@@ -36,7 +36,7 @@ function localgov_replicate_menu_local_tasks_alter(&$data, $route_name): void {
     'entity.node.scheduled_transitions',
   ];
 
-  if (in_array($route_name, $routes)) {
+  if (in_array($route_name, $routes, TRUE)) {
     $data['tabs'][0]['replicate_ui.local_tasks:entity.node.replicate']['#link']['title'] = t('Clone');
   }
 }
