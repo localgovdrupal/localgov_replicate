@@ -1,6 +1,8 @@
 ## Moved to Drupal.org
 https://www.drupal.org/project/localgov_replicate
 
+---
+
 ## INTRODUCTION
 
 The LocalGov Replicate module adds the ability to be able to replicate/clone content on your LocalGov Drupal website.
