@@ -15,6 +15,11 @@ The LocalGov Replicate module adds the ability to be able to replicate/clone con
 ## INSTALLATION
 
 Install as you would normally install a contributed Drupal module.
+
+```
+composer require localgovdrupal/localgov_replicate
+```
+
 See: https://www.drupal.org/node/895232 for further information.
 
 ## CONFIGURATION
